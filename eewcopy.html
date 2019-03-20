@@ -1,0 +1,258 @@
+<html>
+<head>
+<title>地震情報 生成</title>
+<meta charset="UTF-8">
+<style>
+html, body {
+font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+margin:0;
+}
+.text{
+font-size: 25;
+}
+</style>
+</head>
+<body>
+<input id="date" type="date" name="calendar">
+<select id="hours">
+<option value="00">0</option>
+<option value="01">1</option>
+<option value="02">2</option>
+<option value="03">3</option>
+<option value="04">4</option>
+<option value="05">5</option>
+<option value="06">6</option>
+<option value="07">7</option>
+<option value="08">8</option>
+<option value="09">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+</select>時
+<select id="minutes">
+<option value="00">0</option>
+<option value="01">1</option>
+<option value="02">2</option>
+<option value="03">3</option>
+<option value="04">4</option>
+<option value="05">5</option>
+<option value="06">6</option>
+<option value="07">7</option>
+<option value="08">8</option>
+<option value="09">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+<option value="32">32</option>
+<option value="33">33</option>
+<option value="34">34</option>
+<option value="35">35</option>
+<option value="36">36</option>
+<option value="37">37</option>
+<option value="38">38</option>
+<option value="39">39</option>
+<option value="40">40</option>
+<option value="41">41</option>
+<option value="42">42</option>
+<option value="43">43</option>
+<option value="44">44</option>
+<option value="45">45</option>
+<option value="46">46</option>
+<option value="47">47</option>
+<option value="48">48</option>
+<option value="49">49</option>
+<option value="50">50</option>
+<option value="51">51</option>
+<option value="52">52</option>
+<option value="53">53</option>
+<option value="54">54</option>
+<option value="55">55</option>
+<option value="56">56</option>
+<option value="57">57</option>
+<option value="58">58</option>
+<option value="59">59</option>
+</select>分
+<select id="seconds">
+<option value="00">0</option>
+<option value="01">1</option>
+<option value="02">2</option>
+<option value="03">3</option>
+<option value="04">4</option>
+<option value="05">5</option>
+<option value="06">6</option>
+<option value="07">7</option>
+<option value="08">8</option>
+<option value="09">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+<option value="32">32</option>
+<option value="33">33</option>
+<option value="34">34</option>
+<option value="35">35</option>
+<option value="36">36</option>
+<option value="37">37</option>
+<option value="38">38</option>
+<option value="39">39</option>
+<option value="40">40</option>
+<option value="41">41</option>
+<option value="42">42</option>
+<option value="43">43</option>
+<option value="44">44</option>
+<option value="45">45</option>
+<option value="46">46</option>
+<option value="47">47</option>
+<option value="48">48</option>
+<option value="49">49</option>
+<option value="50">50</option>
+<option value="51">51</option>
+<option value="52">52</option>
+<option value="53">53</option>
+<option value="54">54</option>
+<option value="55">55</option>
+<option value="56">56</option>
+<option value="57">57</option>
+<option value="58">58</option>
+<option value="59">59</option>
+</select>秒
+<input type="button" value="読み込み" onClick="load()">
+<input type="button" value="日時を最新にする" onClick="set()">
+<input type="button" value="最新の情報を読み込み" onClick="reload()">
+<input type="button" value="最新の情報をコピー" onClick="reloadandcopy()">
+<div class="text"><p id="result">JavaScriptが無効です。</p></div>
+<input type="button" value="クリップボードにコピー" onClick="copy()">
+<script type="text/javascript">
+window.onload = function(){document.getElementById("result").innerHTML = "読み込み中";set();loadnow();}
+function set() {
+    var unix = Date.now();
+    unix = unix + (9 * 3600000);
+    var now = new Date(unix);
+    var yyyy = now.getUTCFullYear();
+    var mm = ("0"+(now.getUTCMonth()+1)).slice(-2);
+    var dd = ("0"+now.getUTCDate()).slice(-2);
+    document.getElementById("date").value = yyyy+'-'+mm+'-'+dd;
+    var hours = ("0"+now.getUTCHours()).slice(-2);
+    var minutes = ("0"+(now.getUTCMinutes())).slice(-2);
+    var seconds = ("0"+now.getUTCSeconds()).slice(-2);
+    document.getElementById("hours").value = hours;
+    document.getElementById("minutes").value = minutes;
+    document.getElementById("seconds").value = seconds;
+}
+function load(){
+  get(time = document.getElementById("date").value + document.getElementById("hours").value + document.getElementById("minutes").value + document.getElementById("seconds").value);
+}
+function reload(){
+set();
+loadnow();
+}
+function reloadandcopy(){
+set();
+loadnow();
+copy();
+}
+function loadnow(){
+    var unix = Date.now();
+    unix = unix + (9 * 3600000);
+    var now = new Date(unix);
+    var yyyy = now.getUTCFullYear();
+    var mm = ("0"+(now.getUTCMonth()+1)).slice(-2);
+    var dd = ("0"+now.getUTCDate()).slice(-2);
+    var hours = ("0"+now.getUTCHours()).slice(-2);
+    var minutes = ("0"+(now.getUTCMinutes())).slice(-2);
+    var seconds = ("0"+now.getUTCSeconds()).slice(-2);
+    get(yyyy+mm+dd+hours+minutes+seconds);
+
+}
+function get(time){
+  time = time.replace(/-/g, '');
+  var xmlHttp;
+  xmlHttp = new XMLHttpRequest();
+  xmlHttp.open("GET", "http://www.kmoni.bosai.go.jp/new/webservice/hypo/eew/"+time+".json", false);
+  xmlHttp.send(null);
+  var json = JSON.parse(xmlHttp.responseText);
+  if(json["alertflg"] == "\u4E88\u5831" || json["alertflg"] == "\u8B66\u5831"){
+  if(json["is_final"]){
+    var report_num = "最終報";
+  }else{
+    var report_num = "第"+json["report_num"]+"報";
+}
+    var origin_time = json["origin_time"];
+    origin_time = /*origin_time.substr(4,2)+"月"+ origin_time.substr(6,2)+"日"+*/ origin_time.substr(8,2)+"時"+ origin_time.substr(10,2)+"分"+origin_time.substr(12,2)+"秒";
+  var str = "緊急地震速報（" + json["alertflg"] + "）"+report_num+"<br>"+origin_time+"発生<br>"+json["region_name"]+"<br>北緯"+json["latitude"]+"度・東経"+json["longitude"]+"度<br>深さ"+json["depth"]+"<br>マグニチュード"+json["magunitude"]+"<br>最大震度"+json["calcintensity"]+"<br><br>気象庁発表";
+  document.getElementById("result").innerHTML = str;
+  }else{
+  document.getElementById("result").innerHTML = "緊急地震速報は発表されていません。";
+  }
+}
+function copy(){
+copyText(document.getElementById("result").innerHTML);
+}
+function copyText(string){
+  string = string.replace(/<br>/g, "\n");
+  var tmp = document.createElement("div");
+  var pre = document.createElement('pre');
+  pre.style.webkitUserSelect = 'auto';
+  pre.style.userSelect = 'auto';
+  tmp.appendChild(pre).textContent = string;
+  var s = tmp.style;
+  s.position = 'fixed';
+  s.right = '200%';
+  document.body.appendChild(tmp);
+  document.getSelection().selectAllChildren(tmp);
+  var result = document.execCommand("copy");
+  document.body.removeChild(tmp);
+}
+</script>
+</body>
+</html>
