@@ -11,7 +11,7 @@ overflow: hidden;
 vertical-align: middle;
 }
 #contains{
-  width:100%;
+  width:700px;
   min-height:300px;
   margin-right: auto;
   margin-left : auto;
@@ -20,6 +20,16 @@ vertical-align: middle;
   font-size: 1.6em;
   line-height: 1.5em;
   border-radius: 15px;
+}
+@media (max-width: 700px) {
+  width:100%;
+  min-height:300px;
+  margin-right: auto;
+  margin-left : auto;
+  margin-top:1.5%; 
+  margin-bottom: 1.5%;
+  font-size: 1.6em;
+  line-height: 1.5em;
 }
 #left{
 margin-right: auto;
@@ -30,6 +40,13 @@ width: 400px;
 margin-left: auto;
 margin-right: 0px;
 width: 400px;
+}
+@media (max-width: 300px) {
+  #right{
+margin-left: auto;
+margin-right: 0px;
+width: 400px;
+}
 }
 h1{
 font-weight: bold;
