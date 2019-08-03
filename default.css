@@ -1,7 +1,25 @@
 @charset "UTF-8";
+ :root {
+    --background: white;
+    --color: black;
+ }
+@media (prefers-color-scheme: dark) {
+  :root {
+     --background: #202225;
+     --color: white;
+  }
+}
 html, body {
 font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
 margin:0;
+background-color :var(--background);
+color : var(--color);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+     --background: #202225;
+     --color: white;
+  }
 }
 a {
 color: #22B1FD;
