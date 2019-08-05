@@ -27,7 +27,7 @@ cpu_res = '🖐';
 }
 
 if(clicked == 0){
-document.getElementById("game").innerHTML = '<p onclick="rps(1);">グー👊</p> <p onclick="rps(2);">チョキ✌️</p> <p onclick="rps(3);">パー✋</p>';
+document.getElementById("game").innerHTML = '<h3>じゃんけん</h3><a onclick="rps(1);">グー👊</a> <a onclick="rps(2);">チョキ✌️</a> <a onclick="rps(3);">パー✋</p>';
 }else if(clicked == 1){
 if(cpu == 0){
 var result = "DRAW";
@@ -36,7 +36,7 @@ var result = 'You win';
 }else if(cpu == 2){
 var result = 'You lose😁';
 }
-document.getElementById("game").innerHTML = '👊 vs ' + cpu_res + '<br>' + result + '<br><p onclick="rps(0);">もう一度</p>';
+document.getElementById("game").innerHTML = '👊 vs ' + cpu_res + '<br>' + result + '<br><a onclick="rps(0);">もう一度</p>';
 }else if(clicked == 2){
 if(cpu == 0){
 var result = "You lose 😁";
