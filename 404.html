@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html>
+<style>
+#select{
+border: 2px solid gray;
+border-radius: 5px;
+width: 20%;
+height: 200px;
+text-align: center;
+}
+</style>
 <head>
 <title>柔軟くん&#x1f938;</title>
 <link rel="stylesheet" type="text/css" href="https://junanlove.tk/default.css">
@@ -8,5 +17,51 @@
 <body>
 <h1>404 Not Found</h1>
 そんな時は<a href="https://junanlove.tk/">トップページ</a>へ戻ろう！
+<p id="game"></p>
 </body>
+<script type="text/javascript">
+window.onload = function(){var gameid = Math.floor(Math.random() * 1);if(gameid = 1){rps(0);}};
+
+function rps(clicked){
+var cpu = Math.floor(Math.random() * 3);
+if(cpu == 0){
+cpu_res = '👊';
+}else if(cpu == 1){
+cpu_res = '✌️';
+}else if(cpu == 2){
+cpu_res = '🖐';
+}
+
+if(clicked == 0){
+document.getElementById("game").innerHTML = '<p id="select" onclick="rps(1);">👊<br>グー</p> <p id="select" onclick="rps(2);">✌️<br>チョキ</p> <p id="select" onclick="rps(3);">🖐<br>パー</p>';
+}else if(clicked == 1){
+if(cpu == 0){
+var result = "DRAW";
+}else if(cpu == 1){
+var result = 'You win';
+}else if(cpu == 2){
+var result = 'You lose😁';
+}
+document.getElementById("game").innerHTML = '👊 vs ' + cpu_res + '<br>' + result;
+}else if(clicked == 2){
+if(cpu == 0){
+var result = "You lose 😁";
+}else if(cpu == 1){
+var result = 'DEAW';
+}else if(cpu == 2){
+var result = 'You win';
+}
+document.getElementById("game").innerHTML = '✌️ vs ' + cpu_res + '<br>' + result;
+}else if(clicked == 3){
+if(cpu == 0){
+var result = "You win";
+}else if(cpu == 1){
+var result = 'You lose😄';
+}else if(cpu == 2){
+var result = 'DRAW';
+}
+document.getElementById("game").innerHTML = '🖐 vs ' + cpu_res + '<br>' + result;
+}
+}
+</script>
 </html>
