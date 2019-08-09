@@ -1,25 +1,25 @@
 @charset "UTF-8";
- :root {
-    --background: white;
-    --color: black;
- }
+:root {
+ --background: white;
+ --color: black;
+}
 @media (prefers-color-scheme: dark) {
-  :root {
-     --background: #2B2B2B;
-     --color: white;
-  }
+ :root {
+  --background: #2B2B2B;
+  --color: white;
+ }
 }
 html, body {
-font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
-margin:0;
-background-color :var(--background);
-color : var(--color);
-width: 100%;
+ font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+ margin:0;
+ background-color :var(--background);
+ color : var(--color);
+ width: 100%;
 }
 a {
-color: #22B1FD;
-text-decoration: none;
+ color: #22B1FD;
+ text-decoration: none;
 }
 a:active {
-text-decoration: underline;
+ text-decoration: underline;
 }
