@@ -14,6 +14,7 @@ font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru 
 margin:0;
 background-color :var(--background);
 color : var(--color);
+width: 100%;
 }
 a {
 color: #22B1FD;
